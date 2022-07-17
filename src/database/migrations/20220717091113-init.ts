@@ -18,6 +18,7 @@ module.exports = {
       username: {
         type: DataTypes.STRING,
         allowNull: true,
+        unique: true,
         field: 'username'
       },
       options: {

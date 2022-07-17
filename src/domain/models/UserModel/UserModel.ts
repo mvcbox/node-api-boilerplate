@@ -23,6 +23,7 @@ export const UserModel = sequelize.define<UserModelInstance>(UserModelName, {
   username: {
     type: DataTypes.STRING,
     allowNull: true,
+    unique: true,
     field: 'username'
   },
   options: {
