@@ -64,6 +64,6 @@ export const UserSessionModel = sequelize.define<UserSessionModelInstance>(UserS
     field: 'updated_at'
   }
 }, {
-  underscored: true,
+  //underscored: true,
   tableName: UserSessionModelTableName
 });

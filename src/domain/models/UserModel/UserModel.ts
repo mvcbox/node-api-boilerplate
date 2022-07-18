@@ -52,6 +52,6 @@ export const UserModel = sequelize.define<UserModelInstance>(UserModelName, {
     field: 'updated_at'
   }
 }, {
-  underscored: true,
+  //underscored: true,
   tableName: UserModelTableName
 });
