@@ -25,7 +25,7 @@ export class LogService {
           name: context.logGroupName,
           initializedAt: context.initializedAt
         }, {
-          transaction
+          transaction: transaction.native
         });
 
         await LogGroupRecordModel.bulkCreate(context.logRecords.map(function(logRecord, index) {
@@ -35,7 +35,7 @@ export class LogService {
             logGroupId: logGroup._id!
           };
         }), {
-          transaction
+          transaction: transaction.native
         });
       });
     }).catch(function(err) {

@@ -123,7 +123,7 @@ export class AuthService {
         where: {
           _id: input.user._id
         },
-        transaction
+        transaction: transaction.native
       });
 
       if (!user) {
@@ -144,7 +144,7 @@ export class AuthService {
         client: input.client ?? {},
         status: UserSessionModelStatusEnum.ACTIVE
       }, {
-        transaction
+        transaction: transaction.native
       });
 
       await UserSessionModel.update({
@@ -154,7 +154,7 @@ export class AuthService {
         where: {
           _id: session._id!
         },
-        transaction
+        transaction: transaction.native
       });
 
       return {
@@ -189,7 +189,7 @@ export class AuthService {
             ]
           }
         },
-        transaction
+        transaction: transaction.native
       });
 
       if (!oldSession || oldSession.refreshToken !== this.createHash(inputSessionRefreshToken)) {
@@ -204,7 +204,7 @@ export class AuthService {
         where: {
           _id: oldSession._id!
         },
-        transaction
+        transaction: transaction.native
       });
 
       const { session } = await this.createSession({

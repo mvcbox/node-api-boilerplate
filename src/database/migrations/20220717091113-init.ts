@@ -11,15 +11,20 @@ module.exports = {
       },
       email: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         unique: true,
         field: 'email'
       },
       username: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         unique: true,
         field: 'username'
+      },
+      passwordHash: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        field: 'password_hash'
       },
       options: {
         type: DataTypes.JSONB,

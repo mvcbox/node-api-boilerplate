@@ -2,8 +2,9 @@ import { UserModelStatusEnum } from './UserModelStatusEnum';
 
 export interface UserModelProperties {
   _id?: string;
-  email: string | null;
-  username: string | null;
+  email: string;
+  username: string;
+  passwordHash: string;
   options: {};
   status: UserModelStatusEnum;
   createdAt?: Date;
