@@ -1,10 +1,11 @@
 import { LogService } from '../../services/LogService';
-import { AuthService, AuthServicePermissionEnum } from '../../services/AuthService';
 import { UserService } from '../../services/UserService';
 import { HandleInputDTO, HandleOutputDTO } from './handle';
+import { UserModelStatusEnum } from '../../models/UserModel';
 import { TransactionService } from '../../services/TransactionService';
 import { SignInInteractorOptionsDTO } from './SignInInteractorOptionsDTO';
 import { ApplicationError, ErrorCodeEnum, Interactor } from '../../foundation';
+import { AuthService, AuthServicePermissionEnum } from '../../services/AuthService';
 
 export class SignInInteractor implements Interactor<HandleInputDTO, HandleOutputDTO> {
   protected logService: LogService;
@@ -42,6 +43,15 @@ export class SignInInteractor implements Interactor<HandleInputDTO, HandleOutput
     if (user.passwordHash !== this.userService.passwordHash(input.credentials.password, user._id!)) {
       throw new ApplicationError({
         code: ErrorCodeEnum.INVALID_CREDENTIALS
+      });
+    }
+
+    if (user.status !== UserModelStatusEnum.ACTIVE) {
+      throw new ApplicationError({
+        code: ErrorCodeEnum.ACCESS_DENIED,
+        params: {
+          reason: `USER_STATUS_${user.status}`
+        }
       });
     }
 
