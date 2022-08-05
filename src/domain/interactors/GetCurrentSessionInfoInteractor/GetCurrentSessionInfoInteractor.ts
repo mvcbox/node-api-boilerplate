@@ -4,7 +4,7 @@ import { AuthService, AuthServicePermissionEnum } from '../../services/AuthServi
 import { GetCurrentSessionInfoInteractorOptionsDTO } from './GetCurrentSessionInfoInteractorOptionsDTO';
 
 export class GetCurrentSessionInfoInteractor implements Interactor<HandleInputDTO, HandleOutputDTO> {
-  protected authService: AuthService;
+  protected readonly authService: AuthService;
 
   public constructor(options: GetCurrentSessionInfoInteractorOptionsDTO) {
     this.authService = options.authService;

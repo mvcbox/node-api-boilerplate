@@ -7,8 +7,8 @@ import { AuthService, AuthServicePermissionEnum } from '../../services/AuthServi
 import { GetUserInfoInteractorOptionsDTO } from './GetUserInfoInteractorOptionsDTO';
 
 export class GetUserInfoInteractor implements Interactor<HandleInputDTO, HandleOutputDTO> {
-  protected sequelize: Sequelize;
-  protected authService: AuthService;
+  protected readonly sequelize: Sequelize;
+  protected readonly authService: AuthService;
 
   public constructor(options: GetUserInfoInteractorOptionsDTO) {
     this.sequelize = options.sequelize;

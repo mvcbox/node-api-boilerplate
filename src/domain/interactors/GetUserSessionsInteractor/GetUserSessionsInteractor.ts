@@ -7,8 +7,8 @@ import { GetUserSessionsInteractorOptionsDTO } from './GetUserSessionsInteractor
 import { UserSessionModel, UserSessionModelProperties } from '../../models/UserSessionModel';
 
 export class GetUserSessionsInteractor implements Interactor<HandleInputDTO, HandleOutputDTO> {
-  protected sequelize: Sequelize;
-  protected authService: AuthService;
+  protected readonly sequelize: Sequelize;
+  protected readonly authService: AuthService;
 
   public constructor(options: GetUserSessionsInteractorOptionsDTO) {
     this.sequelize = options.sequelize;

@@ -6,9 +6,9 @@ import { _TemplateInteractorOptionsDTO } from './_TemplateInteractorOptionsDTO';
 import { AuthService, AuthServicePermissionEnum } from '../../services/AuthService';
 
 export class _TemplateInteractor implements Interactor<HandleInputDTO, HandleOutputDTO> {
-  protected logService: LogService;
-  protected authService: AuthService;
-  protected transactionService: TransactionService;
+  protected readonly logService: LogService;
+  protected readonly authService: AuthService;
+  protected readonly transactionService: TransactionService;
 
   public constructor(options: _TemplateInteractorOptionsDTO) {
     this.logService = options.logService;

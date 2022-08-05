@@ -8,10 +8,10 @@ import { ApplicationError, ErrorCodeEnum, Interactor } from '../../foundation';
 import { AuthService, AuthServicePermissionEnum } from '../../services/AuthService';
 
 export class SignInInteractor implements Interactor<HandleInputDTO, HandleOutputDTO> {
-  protected logService: LogService;
-  protected authService: AuthService;
-  protected userService: UserService;
-  protected transactionService: TransactionService;
+  protected readonly logService: LogService;
+  protected readonly authService: AuthService;
+  protected readonly userService: UserService;
+  protected readonly transactionService: TransactionService;
 
   public constructor(options: SignInInteractorOptionsDTO) {
     this.logService = options.logService;

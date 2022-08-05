@@ -6,8 +6,8 @@ import { UserSessionModel, UserSessionModelStatusEnum } from '../../models/UserS
 import { TerminateSessionInteractorOptionsDTO } from './TerminateSessionInteractorOptionsDTO';
 
 export class TerminateSessionInteractor implements Interactor<HandleInputDTO, HandleOutputDTO> {
-  protected sequelize: Sequelize;
-  protected authService: AuthService;
+  protected readonly sequelize: Sequelize;
+  protected readonly authService: AuthService;
 
   public constructor(options: TerminateSessionInteractorOptionsDTO) {
     this.sequelize = options.sequelize;

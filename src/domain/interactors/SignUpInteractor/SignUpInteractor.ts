@@ -8,10 +8,10 @@ import { TransactionService } from '../../services/TransactionService';
 import { SignUpInteractorOptionsDTO } from './SignUpInteractorOptionsDTO';
 
 export class SignUpInteractor implements Interactor<HandleInputDTO, HandleOutputDTO> {
-  protected logService: LogService;
-  protected authService: AuthService;
-  protected userService: UserService;
-  protected transactionService: TransactionService;
+  protected readonly logService: LogService;
+  protected readonly authService: AuthService;
+  protected readonly userService: UserService;
+  protected readonly transactionService: TransactionService;
 
   public constructor(options: SignUpInteractorOptionsDTO) {
     this.logService = options.logService;

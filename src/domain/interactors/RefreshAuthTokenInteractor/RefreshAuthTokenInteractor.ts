@@ -5,8 +5,8 @@ import { TransactionService } from '../../services/TransactionService';
 import { RefreshAuthTokenInteractorOptionsDTO } from './RefreshAuthTokenInteractorOptionsDTO';
 
 export class RefreshAuthTokenInteractor implements Interactor<HandleInputDTO, HandleOutputDTO> {
-  protected authService: AuthService;
-  protected transactionService: TransactionService;
+  protected readonly authService: AuthService;
+  protected readonly transactionService: TransactionService;
 
   public constructor(options: RefreshAuthTokenInteractorOptionsDTO) {
     this.authService = options.authService;
