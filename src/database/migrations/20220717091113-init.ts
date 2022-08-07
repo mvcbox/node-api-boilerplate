@@ -267,6 +267,8 @@ export async function down(queryInterface: QueryInterface, _Sequelize: typeof Se
   await queryInterface.dropTable('user_session');
   await queryInterface.sequelize.query('DROP TYPE "enum_user_session_status"');
   // -------------------------------------------------------------------------------------------------------------------
+  await queryInterface.removeIndex('user', 'user__uindex__username');
+  await queryInterface.removeIndex('user', 'user__uindex__email');
   await queryInterface.dropTable('user');
   await queryInterface.sequelize.query('DROP TYPE "enum_user_status"');
   // -------------------------------------------------------------------------------------------------------------------
