@@ -18,7 +18,7 @@ export abstract class EmailService {
     this.logService = options.logService;
     this.subjectPrefix = options.subjectPrefix;
     this.defaultTemplateParams = options.defaultTemplateParams ?? {};
-    this.templates = new Map<EmailServiceTemplateTypeEnum, TemplateExecutor>;
+    this.templates = new Map<EmailServiceTemplateTypeEnum, TemplateExecutor>();
 
     options.templates.forEach((value, key) => {
       this.templates.set(key, _.template(value, { variable: '___obj' }));
