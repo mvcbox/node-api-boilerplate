@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["es5", "es6", "ES2017"],
+    "lib": [
+      "es5",
+      "es6",
+      "ES2017"
+    ],
     "rootDir": "src",
     "outDir": "dist",
     "module": "commonjs",
@@ -24,8 +28,7 @@
     ],
     "plugins": [
       {
-        "transform": "typescript-is/lib/transform-inline/transformer",
-        "ignoreClasses": true
+        "transform": "typia/lib/transform"
       }
     ]
   },

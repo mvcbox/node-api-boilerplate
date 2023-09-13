@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { TypeGuardError } from 'typescript-is';
+import { TypeGuardError } from 'typia';
 import { errorToStderr } from './error-to-stderr';
 import { container } from '../../../../container';
 import { Request, Response, NextFunction } from 'express';

@@ -1,5 +1,5 @@
+import { assertEquals } from 'typia';
 import { Request, Response } from 'express';
-import { assertEquals } from 'typescript-is';
 import { container } from '../../../../../container';
 import { RpcRequest, getSessionClient } from '../../foundation';
 import {
