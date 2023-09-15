@@ -37,13 +37,12 @@ export const config = {
         }
       ]
     },
+    logging: console.log,
+    benchmark: true,
     pool: {
       min: 1,
       max: 10
-    },
-    logging: console.log,
-    benchmark: true,
-    ssl: !!Number(process.env.DATABASE_SSL_ENABLE ?? '0')
+    }
   } as Options,
   emailService: {
     fromEmail: process.env.SMTP_FROM_EMAIL ?? '',
